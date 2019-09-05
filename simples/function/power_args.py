@@ -53,14 +53,15 @@ print(calc(*nums))
 '''
 
 
+'''
 # 关键字参数
 def person(name, age, **kw):  # 关键字参数允许你传入0个或任意个含参数名的参数，这些关键字参数在函数内部自动组装为一个dic,可以扩展函数的功能
-	if 'city' in kw:
-		# 有city资源
-		pass
-	if 'job' in kw:
-		# 有job资源
-		pass
+    if 'city' in kw:
+        # 有city资源
+        pass
+    if 'job' in kw:
+        # 有job资源
+        pass
     print('name:', name, 'age:', age, 'other:', kw)
 
 
@@ -70,3 +71,18 @@ print(person('bob', 45, gender='M', job='engineer'))
 extra = {'city': 'beijing', 'job': 'engineer'}
 # **extra表示把extra这个dict的所有key-value用关键字参数传入到函数的**kw参数，kw将获得一个dict，注意kw获得的dict是extra的一份拷贝，对kw的改动不会影响到函数外的extra
 print(person('jack', 24, **extra))
+'''
+
+
+# 练习
+def product(x, *y):
+    sum = x
+    for n in y:
+        sum = sum * n
+    return sum
+
+
+print(product(5))
+print(product(5, 6))
+print(product(5, 6, 7))
+print(product(5, 6, 7, 9))
